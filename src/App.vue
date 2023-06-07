@@ -18,7 +18,15 @@ export default {
   },
   methods: {
     getMovies() {
-      console.log(store.searchText);
+      axios.get(store.apiSearchMovieURL + store.searchText)
+        .then(res => {
+          store.movieList = res.data.results;
+          console.log(store.movieList);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+
       store.searchText = '';
     }
   },
