@@ -1,0 +1,18 @@
+//UTILITIES
+@mixin center($type: '') {
+    display: flex;
+
+    @if $type =='y' {
+        align-items: center;
+    }
+
+    @else if $type =='x' {
+        justify-content: center;
+    }
+
+    @else if $type =='both' {
+        align-items: center;
+        justify-content: center;
+    }
+
+}

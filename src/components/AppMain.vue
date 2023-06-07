@@ -9,7 +9,14 @@ export default {
 </script>
 
 <template>
-    <CardContainer />
+    <main>
+        <CardContainer />
+    </main>
 </template>
 
-<style lang="scss" scoped></style> 
+<style lang="scss" scoped>
+main {
+    height: calc(100vh - 100px);
+    background-color: #5d5d5d;
+}
+</style> 

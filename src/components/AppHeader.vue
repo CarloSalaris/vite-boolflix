@@ -20,10 +20,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/mixins' as *;
+
+
 header {
+    height: 100px;
     background-color: #000000;
     color: red;
-    padding: 15px 30px;
+    padding: 15px;
 }
 
 .searchBar {
@@ -51,8 +55,8 @@ header {
 
 //UTILITIES
 .container {
-    display: flex;
-    align-items: center;
+    @include center('y');
     justify-content: space-between;
+
 }
 </style> 
