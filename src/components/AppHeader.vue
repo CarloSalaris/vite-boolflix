@@ -1,7 +1,15 @@
 <script>
+import { store } from "../store.js";
+
 export default {
     name: 'AppHeader',
+    data() {
+        return {
+            store,
+        }
+    }
 }
+
 </script>
 
 <template>
@@ -10,9 +18,10 @@ export default {
             <h1>BOOLIX</h1>
 
             <div class="searchBar">
-                <input type="text" name="textSearch" id="textSearch" placeholder="Search...">
-                <button>
-                    send
+                <input type="text" name="textSearch" id="textSearch" placeholder="Search..."
+                    v-model.trim="store.searchText">
+                <button @click.prevent="$emit('search')">
+                    Send
                 </button>
             </div>
         </div>
