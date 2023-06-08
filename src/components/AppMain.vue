@@ -16,7 +16,8 @@ export default {
 
 <style lang="scss" scoped>
 main {
-    height: calc(100vh - 100px);
+    min-height: calc(100% - 100px);
     background-color: #5d5d5d;
+    overflow-y: scroll;
 }
 </style> 

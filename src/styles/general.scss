@@ -29,3 +29,17 @@ ul {
     display: flex;
     flex-wrap: wrap;
 }
+
+.card {
+    border: 1px solid #ffffff;
+    width: 200px;
+    height: 300px;
+
+    .cardInfo {
+        padding: 10px;
+
+        img {
+            width: 18px;
+        }
+    }
+}

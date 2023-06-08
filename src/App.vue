@@ -34,11 +34,18 @@ export default {
 </script>
 
 <template>
-  <AppHeader @search="getMovies" />
-  <AppMain />
+  <div id="wrapper">
+    <AppHeader @search="getMovies" />
+    <AppMain />
+  </div>
 </template>
 
 <style lang="scss">
 @use './styles/general.scss';
 @use './styles/partials/mixins.scss';
+
+#wrapper {
+  height: 100vh;
+  width: 100vw;
+}
 </style>
