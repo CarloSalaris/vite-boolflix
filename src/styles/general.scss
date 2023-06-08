@@ -10,6 +10,7 @@
 
 img {
     max-width: 100%;
+    word-wrap: break-word;
 }
 
 a {
@@ -33,10 +34,12 @@ ul {
 .card {
     border: 1px solid #ffffff;
     width: 200px;
-    height: 300px;
+    min-height: 300px;
 
     .cardInfo {
         padding: 10px;
+        word-wrap: break-word;
+
 
         img {
             width: 18px;
