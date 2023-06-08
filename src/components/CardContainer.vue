@@ -22,7 +22,7 @@ export default {
 
         <div class="container">
             <!-- CARD -->
-            <SingleCard v-for="item in store.movieList" :key="item.id" :movieDetails="item" />
+            <SingleCard v-for="item in store.movieList" :key="item.id" :details="item" />
         </div>
 
     </section>
@@ -31,33 +31,11 @@ export default {
 
         <h2>TV SERIES</h2>
 
-        <!-- <div class="container">
-        
-                <SingleCard v-for="item in store.tvList" :key="item.id" :tvDetails="item" />
-            </div> -->
         <div class="container">
-
             <!-- CARD -->
-
-            <div v-for="item in store.tvList" :key="item.id" class="card">
-                <div class="cardInfo">
-                    <div>
-                        <strong>Titolo: </strong>
-                        {{ item.name }}
-                    </div>
-                    <div>
-                        <strong>Titolo originale: </strong>
-                        {{ item.original_name }}
-                    </div>
-                    <div>
-                        <img :src="`/flags/${item.original_language}.svg`" :alt="`Language: ${item.original_language}`">
-                    </div>
-                    <div>
-                        Voto: {{ item.vote_average }}
-                    </div>
-                </div>
-            </div>
+            <SingleCard v-for="item in store.tvList" :key="item.id" :details="item" />
         </div>
+
     </section>
 </template>
 

@@ -3,7 +3,7 @@
 export default {
     name: 'SingleCard',
     props: {
-        movieDetails: Object,
+        details: Object,
     }
 }
 </script>
@@ -14,18 +14,17 @@ export default {
         <div class="cardInfo">
             <div>
                 <strong>Titolo: </strong>
-                {{ movieDetails.title }}
+                {{ details.title || details.name }}
             </div>
             <div>
                 <strong>Titolo originale: </strong>
-                {{ movieDetails.original_title }}
+                {{ details.original_title || details.original_name }}
             </div>
             <div>
-                <img :src="`/flags/${movieDetails.original_language}.svg`"
-                    :alt="`Language: ${movieDetails.original_language}`">
+                <img :src="`/flags/${details.original_language}.svg`" :alt="`Language: ${details.original_language}`">
             </div>
             <div>
-                Voto: {{ movieDetails.vote_average }}
+                Voto: {{ details.vote_average }}
             </div>
         </div>
     </div>
