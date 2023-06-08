@@ -10,7 +10,7 @@ export default {
         roundUp(value) {
             return Math.ceil(value)
         }
-    },
+    }
 }
 </script>
 
@@ -25,22 +25,31 @@ export default {
 
         <!-- CARD INFO -->
         <div class="cardInfo">
-            <div>
+            <div class="infoElement">
                 <strong>Titolo: </strong>
                 {{ details.title || details.name }}
             </div>
-            <div>
+            <div class="infoElement">
                 <strong>Titolo originale: </strong>
                 {{ details.original_title || details.original_name }}
             </div>
-            <div>
+
+            <div class="infoElement">
+                <strong>Language: </strong>
                 <img :src="`/flags/${details.original_language}.svg`" :alt="`Language: ${details.original_language}`">
             </div>
-            <div>
-                Voto: {{ roundUp(details.vote_average / 2) }}
+
+            <div class="infoElement">
+                <!-- Voto: {{ this.roundUp(details.vote_average / 2) }} -->
+                <span v-for="num in this.roundUp(details.vote_average / 2)"><i class="fa-solid fa-star"></i></span>
+                <span v-for="num in (5 - this.roundUp(details.vote_average / 2))"><i class="fa-regular fa-star"></i></span>
             </div>
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped></style> 
+<style lang="scss" scoped>
+.infoElement {
+    margin-bottom: 10px;
+}
+</style> 
