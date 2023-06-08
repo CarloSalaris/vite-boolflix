@@ -22,7 +22,7 @@ export default {
 
         <div class="container">
             <!-- CARD -->
-            <SingleCard />
+            <SingleCard v-for="item in store.movieList" :key="item.id" :movieDetails="item" />
         </div>
 
     </section>
@@ -30,8 +30,15 @@ export default {
     <section v-if="store.tvList.length !== 0">
 
         <h2>TV SERIES</h2>
+
+        <!-- <div class="container">
+        
+                <SingleCard v-for="item in store.tvList" :key="item.id" :tvDetails="item" />
+            </div> -->
         <div class="container">
+
             <!-- CARD -->
+
             <div v-for="item in store.tvList" :key="item.id" class="card">
                 <div class="cardInfo">
                     <div>
@@ -66,6 +73,7 @@ h2 {
 }
 
 .container {
-    border: 1px solid purple;
+    @include center('x');
+    gap: 10px;
 }
 </style> 

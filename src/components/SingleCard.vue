@@ -1,33 +1,31 @@
 <script>
-import { store } from "../store.js";
 
 export default {
     name: 'SingleCard',
-    data() {
-        return {
-            store,
-        }
+    props: {
+        movieDetails: Object,
     }
 }
 </script>
 
 <template>
     <!-- CARD -->
-    <div v-for="item in store.movieList" :key="item.id" class="card">
+    <div class="card">
         <div class="cardInfo">
             <div>
                 <strong>Titolo: </strong>
-                {{ item.title }}
+                {{ movieDetails.title }}
             </div>
             <div>
                 <strong>Titolo originale: </strong>
-                {{ item.original_title }}
+                {{ movieDetails.original_title }}
             </div>
             <div>
-                <img :src="`/flags/${item.original_language}.svg`" :alt="`Language: ${item.original_language}`">
+                <img :src="`/flags/${movieDetails.original_language}.svg`"
+                    :alt="`Language: ${movieDetails.original_language}`">
             </div>
             <div>
-                Voto: {{ item.vote_average }}
+                Voto: {{ movieDetails.vote_average }}
             </div>
         </div>
     </div>
