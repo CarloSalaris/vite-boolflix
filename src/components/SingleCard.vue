@@ -5,7 +5,12 @@ export default {
     props: {
         details: Object,
         imgRoot: String,
-    }
+    },
+    methods: {
+        roundUp(value) {
+            return Math.ceil(value)
+        }
+    },
 }
 </script>
 
@@ -32,7 +37,7 @@ export default {
                 <img :src="`/flags/${details.original_language}.svg`" :alt="`Language: ${details.original_language}`">
             </div>
             <div>
-                Voto: {{ details.vote_average }}
+                Voto: {{ roundUp(details.vote_average / 2) }}
             </div>
         </div>
     </div>
