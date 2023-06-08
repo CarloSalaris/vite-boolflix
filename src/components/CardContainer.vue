@@ -1,6 +1,13 @@
 <script>
+import { store } from "../store.js";
+
 export default {
     name: 'CardContainer',
+    data() {
+        return {
+            store,
+        }
+    }
 }
 </script>
 
@@ -8,11 +15,11 @@ export default {
     <div class="container">
 
         <!-- CARD -->
-        <div>
-            <div>TITOLO:</div>
-            <div>TITOLO ORIGINALE:</div>
-            <div>LINGUA:</div>
-            <div>VOTO:</div>
+        <div v-for="item in store.movieList">
+            <div>TITOLO: {{ item.title }}</div>
+            <div>TITOLO ORIGINALE: {{ item.original_title }}</div>
+            <div>LINGUA: {{ item.original_language }}</div>
+            <div>VOTO: {{ item.vote_average }}</div>
         </div>
 
     </div>
