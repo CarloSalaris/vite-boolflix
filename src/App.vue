@@ -25,7 +25,15 @@ export default {
         })
         .catch(err => {
           console.log(err);
-        })
+        }),
+        axios.get(store.apiSearchTvURL + store.searchText)
+          .then(res => {
+            store.tvList = res.data.results;
+            console.log(store.tvList);
+          })
+          .catch(err => {
+            console.log(err);
+          })
 
       store.searchText = '';
     }
