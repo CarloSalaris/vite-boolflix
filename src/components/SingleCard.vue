@@ -15,12 +15,20 @@ export default {
     <!-- CARD -->
     <div v-for="item in store.movieList" :key="item.id" class="card">
         <div class="cardInfo">
-            <div>TITOLO: {{ item.title }}</div>
-            <div>TITOLO ORIGINALE: {{ item.original_title }}</div>
-            <div>LINGUA:
-                <img :src="`/flags/${item.original_language}.svg`" :alt="item.original_language">
+            <div>
+                <strong>Titolo: </strong>
+                {{ item.title }}
             </div>
-            <div>VOTO: {{ item.vote_average }}</div>
+            <div>
+                <strong>Titolo originale: </strong>
+                {{ item.original_title }}
+            </div>
+            <div>
+                <img :src="`/flags/${item.original_language}.svg`" :alt="`Language: ${item.original_language}`">
+            </div>
+            <div>
+                Voto: {{ item.vote_average }}
+            </div>
         </div>
     </div>
 </template>
