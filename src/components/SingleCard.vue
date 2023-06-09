@@ -40,17 +40,22 @@ export default {
                 </div>
                 <div class="infoElement">
                     <!-- Voto: {{ this.roundUp(details.vote_average / 2) }} -->
-                    <span v-for="num in this.roundUp(details.vote_average / 2)"><i class="fa-solid fa-star"></i></span>
-                    <span v-for="num in (5 - this.roundUp(details.vote_average / 2))"><i
-                            class="fa-regular fa-star"></i></span>
+                    <span v-for="num in this.roundUp(details.vote_average / 2)">
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span v-for="num in (5 - this.roundUp(details.vote_average / 2))">
+                        <i class="fa-regular fa-star"></i>
+                    </span>
                 </div>
+
+                <div class="infoElement">
+                    <strong>Overview: </strong>
+                </div>
+
+                <div class="overview">{{ details.overview }}</div>
             </div>
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped>
-.infoElement {
-    margin-bottom: 10px;
-}
-</style> 
+<style lang="scss" scoped></style> 
