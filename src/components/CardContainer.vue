@@ -50,6 +50,7 @@ section {
 
 h2 {
     margin-bottom: 20px;
+    padding: 10px;
 }
 
 .container {
