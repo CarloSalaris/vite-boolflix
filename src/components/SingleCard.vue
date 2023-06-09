@@ -20,7 +20,12 @@ export default {
 
         <div class="card-side front">
             <!-- COVER IMAGE -->
-            <img :src="imgRoot + details.poster_path" :alt="`${details.title || details.name} cover`">
+            <img :src="imgRoot + details.poster_path" alt="">
+            <div v-if="details.poster_path == null" class="no_img_found cardInfo">
+                <div>
+                    <h2>NO IMAGE FOUND FOR</h2> {{ details.title || details.name }}
+                </div>
+            </div>
         </div>
 
         <div class="card-side back">

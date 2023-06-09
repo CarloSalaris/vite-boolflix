@@ -22,6 +22,10 @@ ul {
     list-style-type: none;
 }
 
+input {
+    outline: none;
+}
+
 //UTILITIES
 .container {
     height: 100%;
@@ -49,6 +53,40 @@ ul {
         top: 0;
         left: 0;
 
+        //IF NO IMAGE IS FOUND
+        .no_img_found {
+            width: 100%;
+            background-color: rgb(130, 125, 125);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cardInfo {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 10px;
+            word-wrap: break-word;
+
+            .infoElement {
+                margin-bottom: 10px;
+
+                img {
+                    width: 18px;
+                }
+
+                span .fa-solid {
+                    color: rgb(255, 225, 56);
+                }
+            }
+
+            .overview {
+                max-height: 100%;
+                overflow-y: scroll;
+            }
+        }
+
         &.front {
             overflow: hidden;
 
@@ -65,30 +103,6 @@ ul {
             border: 1px solid #ffffff;
             border-radius: 10px;
 
-            .cardInfo {
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                padding: 10px;
-                word-wrap: break-word;
-
-                .infoElement {
-                    margin-bottom: 10px;
-
-                    img {
-                        width: 18px;
-                    }
-
-                    span .fa-solid {
-                        color: rgb(255, 225, 56);
-                    }
-                }
-
-                .overview {
-                    max-height: 100%;
-                    overflow-y: scroll;
-                }
-            }
         }
 
     }

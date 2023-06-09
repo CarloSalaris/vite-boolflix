@@ -18,7 +18,7 @@ export default {
             <h1>BOOLIX</h1>
 
             <div class="searchBar">
-                <input type="text" name="textSearch" id="textSearch" placeholder="Search..."
+                <input type="text" name="textSearch" id="textSearch" placeholder="Search..." @keyup.enter="$emit('search')"
                     v-model.trim="store.searchText">
                 <button @click.prevent="$emit('search')">
                     Send
