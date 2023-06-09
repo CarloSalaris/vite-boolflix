@@ -31,21 +31,63 @@ ul {
     flex-wrap: wrap;
 }
 
+//Rotating two-sided card
 .card {
-    border: 1px solid #ffffff;
+    perspective: 150rem;
+    position: relative;
     width: 200px;
-    min-height: 300px;
+    height: 300px;
+    cursor: pointer;
 
-    .cardInfo {
-        padding: 10px;
-        word-wrap: break-word;
+    .card-side {
+        height: 100%;
+        width: 100%;
+        transition: all 1s ease;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
 
-        img {
-            width: 18px;
+        &.front {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
         }
 
-        span .fa-solid {
-            color: rgb(255, 225, 56);
+        &.back {
+            transform: rotateY(180deg);
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+
+
+
+            .cardInfo {
+                padding: 10px;
+                word-wrap: break-word;
+
+                img {
+                    width: 18px;
+                }
+
+                span .fa-solid {
+                    color: rgb(255, 225, 56);
+                }
+            }
         }
+
+
     }
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
 }

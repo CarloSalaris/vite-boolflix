@@ -18,31 +18,32 @@ export default {
     <!-- CARD -->
     <div class="card">
 
-        <!-- COVER IMAGE -->
-        <div class="imgCover">
+        <div class="card-side front">
+            <!-- COVER IMAGE -->
             <img :src="imgRoot + details.poster_path" :alt="`${details.title || details.name} cover`">
         </div>
 
-        <!-- CARD INFO -->
-        <div class="cardInfo">
-            <div class="infoElement">
-                <strong>Titolo: </strong>
-                {{ details.title || details.name }}
-            </div>
-            <div class="infoElement">
-                <strong>Titolo originale: </strong>
-                {{ details.original_title || details.original_name }}
-            </div>
-
-            <div class="infoElement">
-                <strong>Language: </strong>
-                <img :src="`/flags/${details.original_language}.svg`" :alt="`Language: ${details.original_language}`">
-            </div>
-
-            <div class="infoElement">
-                <!-- Voto: {{ this.roundUp(details.vote_average / 2) }} -->
-                <span v-for="num in this.roundUp(details.vote_average / 2)"><i class="fa-solid fa-star"></i></span>
-                <span v-for="num in (5 - this.roundUp(details.vote_average / 2))"><i class="fa-regular fa-star"></i></span>
+        <div class="card-side back">
+            <!-- CARD INFO -->
+            <div class="cardInfo">
+                <div class="infoElement">
+                    <strong>Titolo: </strong>
+                    {{ details.title || details.name }}
+                </div>
+                <div class="infoElement">
+                    <strong>Titolo originale: </strong>
+                    {{ details.original_title || details.original_name }}
+                </div>
+                <div class="infoElement">
+                    <strong>Language: </strong>
+                    <img :src="`/flags/${details.original_language}.svg`" :alt="`Language: ${details.original_language}`">
+                </div>
+                <div class="infoElement">
+                    <!-- Voto: {{ this.roundUp(details.vote_average / 2) }} -->
+                    <span v-for="num in this.roundUp(details.vote_average / 2)"><i class="fa-solid fa-star"></i></span>
+                    <span v-for="num in (5 - this.roundUp(details.vote_average / 2))"><i
+                            class="fa-regular fa-star"></i></span>
+                </div>
             </div>
         </div>
     </div>
