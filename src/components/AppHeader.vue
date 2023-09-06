@@ -15,7 +15,7 @@ export default {
 <template>
     <header>
         <div class="container">
-            <h1>BOOLIX</h1>
+            <h1>BOOLFLIX</h1>
 
             <div class="searchBar">
                 <input type="text" name="textSearch" id="textSearch" placeholder="Search..." @keyup.enter="$emit('search')"
